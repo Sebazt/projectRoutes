@@ -1,0 +1,16 @@
+<section>
+  <p>Paises o departamentos.</p>
+
+  <button routerLink="departments" [queryParams]="{ id: 10 }">
+    Departamentos
+  </button>
+  
+  <ul *ngIf="countries$ | async as countrie">
+    <li *ngFor="let country of countrie">
+      {{ country.name.common }}
+    </li>
+  </ul>
+  <!-- <button (click)="getCountries()">Paises</button> -->
+
+  <!-- <img src="country.flags.svg" alt="Country" loading="lazy"/> -->
+</section>

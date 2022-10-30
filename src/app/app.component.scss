@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(85, 165, 165);
+  width: 100%;
+  min-height: 100vh;
+}
+
+button,a{
+  margin: 8px;
+}
+
+button:hover{
+  cursor: pointer;
+}
