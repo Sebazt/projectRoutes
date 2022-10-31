@@ -9,9 +9,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'appForms';
   URL = 'countrie';
-  constructor(
-    private router: Router,
-  ) {}
+  private readonly sessionStorageKey = 'isAllowed'
+  constructor(private router: Router) {}
 
   goToCities() {
     this.router.navigate(['countrie']);
@@ -19,5 +18,13 @@ export class AppComponent {
 
   gotoBack() {
     this.router.navigate(['../']);
+  }
+
+  signIn(){
+    sessionStorage.setItem(this.sessionStorageKey,'true');
+  }
+
+  signOut(){
+    sessionStorage.setItem(this.sessionStorageKey, 'false');
   }
 }

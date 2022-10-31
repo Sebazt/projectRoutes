@@ -4,12 +4,17 @@
   <button routerLink="departments" [queryParams]="{ id: 10 }">
     Departamentos
   </button>
-  
-  <ul *ngIf="countries$ | async as countrie">
-    <li *ngFor="let country of countrie">
+
+  <button (click)="queryParams()">Detalle país con Query Params </button>
+
+  <div *ngIf="countries$ | async as countrie" class="contenedorIMG">
+    <!-- <li *ngFor="let country of countrie">
       {{ country.name.common }}
-    </li>
-  </ul>
+    </li> -->
+
+    <img *ngFor="let country of countrie" src={{country.flags.svg}} alt="Country"
+     loading="lazy"/>
+  </div>
   <!-- <button (click)="getCountries()">Paises</button> -->
 
   <!-- <img src="country.flags.svg" alt="Country" loading="lazy"/> -->

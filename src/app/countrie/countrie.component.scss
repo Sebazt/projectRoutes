@@ -5,4 +5,22 @@ section{
   justify-content: center;
   align-items: center;
   margin: 4px;
+
+  .contenedorIMG{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 32px;
+
+
+    img{
+      width: 180px;
+      height: 180px;
+      margin: 12px;
+      background-size: cover;
+    }
+
+  }
 }
+
+
