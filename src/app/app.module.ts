@@ -5,27 +5,32 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CountrieComponent } from './countrie/countrie.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CountrieService } from './countrie/countrie.service';
 import { DepartmentComponent } from './department/department.component';
+import { InterceptorService } from './interceptors/interceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountrieComponent,
     HomeComponent,
-    DepartmentComponent
+    DepartmentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   providers: [
-    CountrieService
+    CountrieService,
+
+    { provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi:true
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
