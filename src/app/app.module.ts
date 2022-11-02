@@ -9,6 +9,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CountrieService } from './countrie/countrie.service';
 import { DepartmentComponent } from './department/department.component';
 import { InterceptorService } from './interceptors/interceptor.service';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,14 +24,12 @@ import { InterceptorService } from './interceptors/interceptor.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [
     CountrieService,
 
-    { provide: HTTP_INTERCEPTORS,
-      useClass: InterceptorService,
-      multi:true
-    },
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
   ],
   bootstrap: [AppComponent],
 })

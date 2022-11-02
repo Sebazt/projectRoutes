@@ -1,11 +1,11 @@
 <section>
   <p>Paises o departamentos.</p>
 
-  <button routerLink="departments" [queryParams]="{ id: 10 }">
+  <button routerLink="departments" [queryParams]="{ id: 10 }" class="btn btn-primary">
     Departamentos
   </button>
 
-  <button (click)="queryParams()">Detalle país con Query Params </button>
+  <button (click)="queryParams()" class="btn btn-primary">Detalle país con Query Params </button>
 
   <div *ngIf="countries$ | async as countrie" class="contenedorIMG">
     <!-- <li *ngFor="let country of countrie">
